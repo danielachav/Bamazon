@@ -52,7 +52,7 @@ function purchaseOrder(ID, amountNeeded){
             connection.query("update products set stock_quantity = stock_quantity - " + amountNeeded + " where item_id=" + ID);
             
         } else {
-            console.log("Please learn how to read and do math, select a smaller quantity next time.")
+            console.log("Oops! Looks like you entered an invalid amount!.")
             
         };
         readProducts();
