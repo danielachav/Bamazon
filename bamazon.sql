@@ -21,7 +21,7 @@ PRIMARY KEY (item_id)
 Select * from products;
 
 
-INSERT INTO products (name, price, stock_quantity, department_name) VALUES
+INSERT INTO products (product_name, price, stock_quantity, department_name) VALUES
 ("Floor Cleaner", 700.00, 10, "Home"),
 ("Waffle Maker", 299.99, 8, "Kitchen"),
 ("Shower Stand", 45.00, 15, "Bath"),
@@ -31,4 +31,4 @@ INSERT INTO products (name, price, stock_quantity, department_name) VALUES
 ("Dog Treats", 80.00, 40, "Pets"),
 ("Plasma TV", 200.00, 20, "Electronics"),
 ("Colored Pencils", 39.99, 72, "School"),
-("Makeup Brushes", 30.00, 107, "Beauty"),
+("Makeup Brushes", 30.00, 107, "Beauty")
