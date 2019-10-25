@@ -2,24 +2,18 @@ var mysql = require("mysql");
 var inquirer = require("inquirer");
 
 var connection = mysql.createConnection({
-  host: "localhost",
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "12dchave",
+    database: "bamazon"
+  });
+  
 
-  // Your port; if not 3306
-  port: 3306,
+  connection.connect(function(err){
+    if (err) throw err;
+    start();
 
-  // Your username
-  user: "root",
-
-  // Your password
-  password: "12dchave",
-  database: "bamazon"
-});
-
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("connected as id " + connection.threadId + "\n");
-  createProduct();
-});
 
 function start() {
     inquirer
@@ -61,9 +55,10 @@ function purchaseOrder(ID, amountNeeded){
 };
 
 function readProducts() {
-    connection.query("select * from products", function(err, res) {
+    connection.query("select * FROM products", function(err, res) {
         if (err) throw err;
 
         console.table(res);
     })
 };
+
