@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
   });
   
 
-  connection.connect(function(err){
+  connection.connect(function(err) {
     if (err) throw err;
     start();
 
@@ -59,6 +59,6 @@ function readProducts() {
         if (err) throw err;
 
         console.table(res);
-    })
-};
+    });
+}});
 
